@@ -1,0 +1,102 @@
+/* 1. Estilização da main */
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border: 2px solid #aaa;
+}
+
+/* 2. Ícones para validação de campos */
+input:valid + span::after {
+    content: '✔️';
+    color: limegreen;
+}
+
+input:invalid + span::after {
+    content: '❌';
+    color: red;
+}
+
+/* 3. Seletor de ID */
+#titulo-principal {
+    color: rgb(140, 76, 8);
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+}
+
+/* 4. Seletor de Classe */
+.destacado {
+    font-weight: bold;
+    color: blue;
+    background-color: yellow;
+    padding: 5px;
+}
+
+/* 5. Seletor de Descendente */
+article p {
+    font-style: italic;
+    color: darkgray;
+    border-left: 4px solid darkgray;
+    padding-left: 10px;
+}
+
+/* 6. Seletor de Irmão Adjacente */
+h1 + p {
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+/* 7. Estilização de Links */
+a:link {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: orange;
+}
+
+/* 8. Pseudo-classe :has */
+section:has(h2) {
+    border-left: 5px solid #888;
+    padding-left: 10px;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+/* 9. Pseudo-classe :is */
+:is(header, footer) {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 10. Pseudo-classe :first-child */
+li:first-child {
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 5px;
+}
+
+/* 11. Pseudo-classe :first-of-type */
+p:first-of-type {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: darkblue;
+}
