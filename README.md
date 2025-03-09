@@ -1,6 +1,6 @@
 # Trabalhos-PPI
 
-# Trabalhos de Programação para Internet 🖥️🌐
+# Trabalhos de Programação para Internet 💻🌐
 
 Este repositório contém os trabalhos desenvolvidos na disciplina **Programação para Internet**.  
 Os projetos foram construídos utilizando **HTML, CSS, JavaScript e Bootstrap**.
@@ -16,7 +16,7 @@ Até agora, os seguintes trabalhos foram realizados:
 6. [Trabalho 6](trabalho6/index.html)  
 7. [Trabalho 7](trabalho7/index.html)  
 
-## 🚀 Como acessar
+## 📎 Como acessar
 Os trabalhos podem ser acessados através do GitHub Pages:  
 🔗 **[Clique aqui para visualizar](https://thaisdam.github.io/Trabalhos-PPI/)**
 
@@ -28,5 +28,6 @@ Os trabalhos podem ser acessados através do GitHub Pages:
 - **Bootstrap** → Layouts responsivos e componentes prontos  
 
 ---
-📌 **Feito por:** Thais Damasceno, aluna de Ciência da Computação
+👩‍💻 **Feito por:** Thais Damasceno, estudante de Ciência da Computação
+
 📧 **Contato:** thaisdam@ufu.br  
