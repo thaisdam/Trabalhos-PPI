@@ -14,7 +14,8 @@ Até agora, os seguintes trabalhos foram realizados:
 4. [Trabalho 4](trabalho4/index.html)  
 5. [Trabalho 5](trabalho5/index.html)  
 6. [Trabalho 6](trabalho6/index.html)  
-7. [Trabalho 7](trabalho7/index.html)  
+7. [Trabalho 7](trabalho7/index.html)
+8. [Trabalho 8](trabalho8/index.html)
 
 ## 📎 Como acessar
 Os trabalhos podem ser acessados através do GitHub Pages:  
