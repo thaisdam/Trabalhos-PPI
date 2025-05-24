@@ -35,7 +35,9 @@ Ou através do infinityfree:
 - **HTML** → Estrutura das páginas  
 - **CSS** → Estilização e responsividade  
 - **JavaScript** → Funcionalidades interativas  
-- **Bootstrap** → Layouts responsivos e componentes prontos  
+- **Bootstrap** → Layouts responsivos e componentes prontos
+- **PHP** → Websites dinâmicos
+- **Java** → Web Services com Java e Spring Boot
 
 ---
 👩‍💻 **Feito por:** Thais Damasceno, estudante de Ciência da Computação
