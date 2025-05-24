@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Endereços</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f2f2f2;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    #resultado {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+    <h1>Testando API Restful</h1>
+
+    <label>CEP:
+        <input type="text" id="cep">
+    </label>
+    <label>Rua:
+        <input type="text" id="rua">
+    </label>
+    <label>Bairro:
+        <input type="text" id="bairro">
+    </label>
+    <label>Cidade:
+        <input type="text" id="cidade">
+    </label>
+
+    <button onclick="buscarEndereco()">Buscar endereço pelo CEP (GET)</button>
+    <button onclick="criarEndereco()">Criar novo (POST)</button>
+    <button onclick="apagarEndereco()">Apagar pelo CEP (DELETE)</button>
+    <button onclick="listarEnderecos()">Listar todos os endereços</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    async function buscarEndereco() {
+      const cep = document.getElementById("cep").value;
+      const res = await fetch(`/address/${cep}`);
+      if (res.ok) {
+        const data = await res.json();
+        document.getElementById("rua").value = data.rua;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.cidade;
+      } else {
+        alert("Endereço não encontrado.");
+      }
+    }
+
+    async function criarEndereco() {
+      const address = {
+        cep: document.getElementById("cep").value,
+        rua: document.getElementById("rua").value,
+        bairro: document.getElementById("bairro").value,
+        cidade: document.getElementById("cidade").value
+      };
+      await fetch("/address", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(address)
+      });
+      alert("Endereço adicionado!");
+    }
+
+    async function apagarEndereco() {
+      const cep = document.getElementById("cep").value;
+      await fetch(`/address/${cep}`, {
+        method: "DELETE"
+      });
+      alert("Endereço removido!");
+    }
+
+    async function listarEnderecos() {
+      const res = await fetch("/address");
+      const data = await res.json();
+      let html = "<ul>";
+      data.forEach(e => {
+        html += `<li>${e.cep} - ${e.rua}, ${e.bairro}, ${e.cidade}</li>`;
+      });
+      html += "</ul>";
+      document.getElementById("resultado").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
