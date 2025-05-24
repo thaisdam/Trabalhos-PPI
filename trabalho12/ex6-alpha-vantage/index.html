@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Cotações com Alpha Vantage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 3rem auto;
+    }
+
+    label, input {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 2rem;
+    }
+
+    .stock {
+      background: #eee;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Consultar cotações de ações</h1>
+  <form id="stock-form">
+    <label>
+      Ação 1:
+      <input type="text" name="stock1" required>
+    </label>
+    <label>
+      Ação 2:
+      <input type="text" name="stock2">
+    </label>
+    <label>
+      Ação 3:
+      <input type="text" name="stock3">
+    </label>
+    <button type="submit">Consultar</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script >
+    document.getElementById('stock-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const key = '8Z859GPE95QIAAO9'; 
+  const symbols = [
+    e.target.stock1.value.trim(),
+    e.target.stock2.value.trim(),
+    e.target.stock3.value.trim()
+  ].filter(s => s); // remove vazios
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = 'Carregando...';
+
+  try {
+    const requests = symbols.map(symbol =>
+      fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}.SA&apikey=${key}`)
+        .then(response => response.json())
+    );
+
+    const results = await Promise.all(requests);
+
+    resultDiv.innerHTML = '';
+    results.forEach((data, i) => {
+      const info = data['Global Quote'];
+      if (!info || !info['05. price']) {
+        resultDiv.innerHTML += `<div class="stock"><strong>${symbols[i]}</strong>: Cotação não encontrada.</div>`;
+      } else {
+        resultDiv.innerHTML += `
+          <div class="stock">
+            <strong>${symbols[i]}</strong><br>
+            Preço: R$ ${parseFloat(info['05. price']).toFixed(2)}<br>
+            Última atualização: ${info['07. latest trading day']}
+          </div>`;
+      }
+    });
+  } catch (error) {
+    resultDiv.innerHTML = `<p style="color:red;">Erro ao consultar as cotações.</p>`;
+    console.error(error);
+  }
+});
+
+  </script>
+</body>
+</html>

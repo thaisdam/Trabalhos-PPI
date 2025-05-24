@@ -1,0 +1,34 @@
+Exercício 4:
+
+Latitude: -19.0233
+Longitude: -48.3348
+
+Corpo da Resposta HTTP:
+
+{
+    "latitude": -19.0,
+    "longitude": -48.375,
+    "generationtime_ms": 0.04947185516357422,
+    "utc_offset_seconds": 0,
+    "timezone": "GMT",
+    "timezone_abbreviation": "GMT",
+    "elevation": 838.0,
+    "current_weather_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature": "°C",
+        "windspeed": "km/h",
+        "winddirection": "°",
+        "is_day": "",
+        "weathercode": "wmo code"
+    },
+    "current_weather": {
+        "time": "2025-04-16T20:15",
+        "interval": 900,
+        "temperature": 24.4,
+        "windspeed": 4.7,
+        "winddirection": 270,
+        "is_day": 1,
+        "weathercode": 95
+    }
+}

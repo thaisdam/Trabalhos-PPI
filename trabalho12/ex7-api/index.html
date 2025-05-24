@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Preditor de Idade - Agify API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Preditor de Idade</h1>
+  <p>O usuário digita um nome e a página retorna a idade média estimada para pessoas com aquele nome, com base em dados públicos.</p>
+  <p>Digite um nome:</p>
+
+  <form id="form">
+    <input type="text" id="name" placeholder="Digite um nome" required>
+    <button type="submit">Consultar idade</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    //Link da API: https://agify.io/
+    document.getElementById("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const resultDiv = document.getElementById("result");
+
+  if (!name) {
+    resultDiv.textContent = "Por favor, digite um nome.";
+    return;
+  }
+
+  resultDiv.textContent = "Consultando...";
+
+  try {
+    const response = await fetch(`https://api.agify.io/?name=${encodeURIComponent(name)}`);
+    if (!response.ok) throw new Error("Erro na requisição.");
+
+    const data = await response.json();
+    resultDiv.textContent = `A idade média de pessoas chamadas "${data.name}" é aproximadamente ${data.age} anos.`;
+  } catch (err) {
+    resultDiv.textContent = "Ocorreu um erro ao buscar a idade.";
+    console.error(err);
+  }
+});
+
+  </script>
+</body>
+
+</html>
