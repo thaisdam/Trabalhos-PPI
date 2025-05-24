@@ -1,0 +1,22 @@
+3-b)
+
+i. Qual foi o código de status retornado?
+R: 200 OK
+
+ii. Qual o valor do cabeçalho Content-Type da resposta HTTP? Por quê?
+R: application/json
+Porque o servidor está retornando os dados no formato JSON.
+
+iii. Qual o valor recebido no corpo da resposta HTTP (aba Response)?
+R:
+{"rua":"Av Floriano","bairro":"Centro","cidade":"Uberl\u00e2ndia"}
+
+{"rua":"Rua Tiradentes","bairro":"Fundinho","cidade":"Uberl\u00e2ndia"}
+
+iv. Qual o valor do cabeçalho Server da resposta HTTP?
+R: openresty
+
+v. A requisição HTTP possui o cabeçalho Content-Type? Por quê?
+R: Sim. O cabeçalho Content-Type é definido como "application/json" na linha:
+xhr.setRequestHeader("Content-Type", "application/json");
+Isso informa ao servidor que os dados enviados estão no formato JSON, o que é importante para que ele possa interpretar corretamente o conteúdo da requisição.

@@ -1,0 +1,61 @@
+2-c)
+i. Qual foi o código de status retornado?
+R: 200 OK
+
+ii. Qual o valor do cabeçalho Content-Type da resposta HTTP? Por quê?
+R: text/html; charset=UTF-8
+Porque o PHP está retornando um conteúdo em formato de texto simples (neste caso, o nome da cidade), que é tratado como HTML/texto.
+
+iii. Qual o valor recebido no corpo da resposta HTTP (aba Response)?
+R: Uberlândia
+(O CEP informado foi 38400-100, e no código PHP isso retorna "Uberlândia")
+
+iv. Qual o valor do cabeçalho Server da resposta HTTP?
+R: openresty
+
+v. A requisição HTTP possui o cabeçalho Content-Type? Por quê?
+R: Não.
+Porque é uma requisição GET e não está enviando dados no corpo (body), portanto não há necessidade de especificar um tipo de conteúdo enviado.
+
+
+2-d)
+i. Qual foi o código de status retornado?
+R: 404 Not Found
+
+ii. Qual o valor do cabeçalho Content-Type da resposta HTTP? Por quê?
+R: text/html; charset=UTF-8 — porque mesmo sendo uma resposta de erro, o servidor retornou uma página HTML informando o erro.
+
+iii. Qual o valor recebido no corpo da resposta HTTP (aba Response)?
+R: O corpo da resposta contém a mensagem “38400-500 is not available”, conforme definido no código PHP.
+
+iv. Qual o valor do cabeçalho Server da resposta HTTP?
+R: openresty
+
+v. A requisição HTTP possui o cabeçalho Content-Type? Por quê?
+R: Não, porque a requisição foi feita com o método GET, que não envia um corpo de dados e, portanto, não precisa informar o tipo de conteúdo.
+
+
+2-e)
+Qual foi o código de status retornado? 
+R: 500 Internal Server Error
+
+E o conteúdo do corpo da resposta HTTP? 
+R: Quando o display de erros está desativado o corpo da resposta está vazio.
+
+2-f) O que mudou? 
+R: Agora o navegador mostra a mensagem de erro completa, incluindo o tipo de erro, a linha e o arquivo onde ocorreu.
+
+Qual foi o código de status retornado? 
+R: 200 OK
+
+O que foi retornado no corpo da resposta HTTP? 
+R: <b>Parse error</b>
+:  syntax error, unexpected token &quot;echo &quot;in <b>/home/vol9_2/infinityfree.com/if0_38144623/trabalhosppi97.infinityfreeapp.com/htdocs/trabalho11/ex2-busca-cidade/busca-cidade.php</b>
+on line <b>8</b>
+<br/>
+
+Em qual situação essa configuração seria útil? 
+R: Ela é útil durante o desenvolvimento da aplicação, pois permite que os desenvolvedores vejam mensagens de erro diretamente no navegador e identifiquem problemas rapidamente.
+
+Em qual situação ela jamais deveria ser utilizada? 
+R: Jamais deve ser utilizada em ambiente de produção, pois pode expor detalhes sensíveis do servidor ou do código-fonte, como caminhos internos, variáveis ou falhas de segurança que podem ser exploradas por usuários mal-intencionados.

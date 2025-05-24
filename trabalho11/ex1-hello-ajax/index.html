@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Teste AJAX Simples</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.5rem;
+      background-image: url("images/bg2.jpg");
+      background-size: cover;
+      margin: 0;
+    }
+
+    main {
+      width: 60%;
+      background-color: #fff;
+      border: 0.5px solid #ccc;
+      margin: 0;
+      padding: 2% 4%;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>Faculdade de Computação da UFU</h1>
+    <p>A Faculdade de Computação (FACOM) da Universidade...</p>
+    <p>No início dos anos 2000 foi criado na Faculdade...</p>
+    <button>Carregar mais conteúdo com Ajax</button>
+  </main>
+
+  <script>
+    // Função que será chamada quando o botão for clicado
+    function loadExtraContent() {
+      // Cria uma nova requisição HTTP
+      let xhr = new XMLHttpRequest();
+  
+      // Configura a requisição para obter o conteúdo do arquivo "conteudoAdicional.html"
+      // O método "GET" será usado, e "true" indica que a requisição será assíncrona
+      xhr.open("GET", "conteudoAdicional.html", true);
+  
+      // Define o que deve acontecer quando a resposta da requisição for carregada
+      xhr.onload = function () {
+        // Seleciona o elemento <main> do HTML
+        const main = document.querySelector("main");
+  
+        // Adiciona o conteúdo retornado (responseText) ao final do elemento <main>
+        // Isso insere o conteúdo HTML do arquivo externo diretamente na página
+        main.insertAdjacentHTML("beforeend", xhr.responseText);
+      };
+  
+      // Envia a requisição ao servidor
+      xhr.send();
+    }
+  
+    // Seleciona o botão da página
+    const button = document.querySelector("button");
+  
+    // Adiciona um "ouvinte de evento" para o clique no botão
+    // Quando o botão for clicado, a função "loadExtraContent" será executada
+    button.addEventListener("click", loadExtraContent);
+  </script>
+  
+  
+</body>
+
+</html>

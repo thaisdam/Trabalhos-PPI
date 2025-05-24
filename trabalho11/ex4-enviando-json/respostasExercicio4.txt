@@ -1,0 +1,46 @@
+4-b)
+Comparação entre os exemplos: ex3-recebendo-json1 e o exemplo com autenticação (exemplo 4)
+
+1. Tipo de requisição:
+- ex3-recebendo-json1: utiliza o método GET para enviar os dados via URL.
+- Exemplo com autenticação: utiliza o método POST e envia os dados no corpo da requisição (body), usando JSON.
+
+2. Formato dos dados enviados:
+- ex3-recebendo-json1: envia o CEP como parâmetro na URL (ex: busca-endereco.php?cep=38400-100).
+- Exemplo com autenticação: envia um objeto JSON com os campos "email", "apikey" e "cep".
+
+3. Segurança:
+- ex3-recebendo-json1: não há verificação de segurança ou autenticação.
+- Exemplo com autenticação: verifica se o e-mail e a chave de acesso (apikey) são válidos antes de retornar os dados. Se estiverem incorretos, retorna erro 403 (Acesso não autorizado).
+
+4. Processamento dos dados no PHP:
+- ex3-recebendo-json1: os dados são obtidos diretamente de $_GET.
+- Exemplo com autenticação: os dados são lidos do corpo da requisição com file_get_contents('php://input') e depois decodificados com json_decode().
+
+5. Resposta:
+- Ambos retornam um objeto JSON com rua, bairro e cidade com base no CEP fornecido.
+
+6. JavaScript:
+- ex3-recebendo-json1: faz requisição com método GET e não envia corpo (body).
+- Exemplo com autenticação: faz requisição com método POST, define header Content-Type como application/json e envia os dados convertidos com JSON.stringify().
+
+4-c)
+Qual o valor dos cabeçalhos Content-Type e Content-Length?
+content-type: application/json
+content-length: 63
+
+O que é apresentado na aba Payload? O que isso significa?
+{cep: "38400-100", email: "fulano@mail.com", apikey: "123456"}
+apikey: "123456"
+cep: "38400-100"
+email: "fulano@mail.com"
+
+
+Esses são os dados que foram enviados do navegador para o servidor como parte do corpo da requisição HTTP.
+Eles estão no formato JSON e foram definidos no objeto 'objetoJS' dentro do código JavaScript.
+Cada campo representa uma informação necessária para o servidor processar a requisição:
+- cep: O CEP informado pelo usuário.
+- email: Um e-mail de referência (fixo no código).
+- apikey: A chave de acesso digitada pelo usuário.
+
+Esses dados são usados pelo servidor para buscar as informações do endereço correspondente ao CEP fornecido.
