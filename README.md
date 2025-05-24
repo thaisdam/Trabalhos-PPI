@@ -16,11 +16,11 @@ Até agora, os seguintes trabalhos foram realizados:
 6. [Trabalho 6](trabalho6/index.html)  
 7. [Trabalho 7](trabalho7/index.html)
 8. [Trabalho 8](trabalho8/index.html)
-9. [Trabalho 9](trabalho9/index.html).
-10. [Trabalho 10](trabalho10/index.html).
-11. [Trabalho 11](trabalho11/index.html).
-12. [Trabalho 12](trabalho12/index.html).
-13. [Trabalho 13](trabalho13/index.html).
+9. [Trabalho 9](trabalho9/index.html)
+10. [Trabalho 10](trabalho10/index.html)
+11. [Trabalho 11](trabalho11/index.html)
+12. [Trabalho 12](trabalho12/index.html)
+13. [Trabalho 13](trabalho13/index.html)
 
 ## 📎 Como acessar
 Os trabalhos podem ser acessados através do GitHub Pages:  
