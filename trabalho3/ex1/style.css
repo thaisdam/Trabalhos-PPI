@@ -1,0 +1,56 @@
+/*3 e 4 */
+body {
+    background-color: #ddd;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #444;
+    line-height: 1.5;
+    width: 60%;
+    margin: 0 auto;
+    padding: 2% 0;
+
+}
+
+/* 5 */
+main {
+    background-color: white;
+    padding: 20px;
+}
+
+/* 6 */
+h1,
+h2 {
+    color: rgb(140, 76, 8);
+}
+
+/* 7 */
+h2~p {
+    text-indent: 2rem;
+}
+
+/* 8 */
+ol {
+    font-weight: bold;
+}
+
+/* 9 */
+a:link {
+    color: blue; /* links não visitados aparecem em azil*/
+}
+
+a:visited {
+    color: rgba(100, 95, 95, 0.858); /* links visitados aparecem em cinza */
+}
+
+a:hover,
+a:active {
+    color: white; /* links quando o mouse passa por cima ou são clicados */
+    background-color: rgb(140, 76, 8); /* fundo laranja */
+    text-decoration: none; /* sem sublinhado */
+}
+
+/* 10 */
+section {
+    margin-top: 0px;
+    padding-bottom: 5px;
+    border-top: solid 1px gray;
+}
