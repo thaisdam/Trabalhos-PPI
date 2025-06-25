@@ -1,163 +1,162 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | clinica Health ABC</title>
 </head>
 
-
-
-<form action="cadastraClient.php" method="post">
-
-    <input type="hidden" name="codigoCadastro" value="123456">
-
-    <h2>Dados Pessoais</h2>
-    <fieldset>
-        <div>
-            <p>
+<body>
+    <form action="cadastraCliente.php" method="POST">
+        <h1>Cadastro do Cliente</h1>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div>
+                <input type="hidden" name="codigoCadastro" value="123456">
+                <label for="codigoUsuario">Código de Usuario: </label>
+                <input type="text" id="codigoUsuario" name="codigoUsuario" value="C-3PO" readonly>
+            </div>
+            <div>
                 <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" placeholder="Informe o nome completo" autofocus required
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required autofocus
                     minlength="2" maxlength="50">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="codigo">Código de Usuário: </label>
-                <input type="text" id="codigo" name="codigo" value="USR202401" readonly>
-            </p>
-        </div>
-        <div>
-            <p>
+            </div>
+            <div>
                 <label for="email">Email: </label>
                 <input type="email" id="email" name="email" required>
-            </p>
-        </div>
-        <div>
-            <p>
+            </div>
+            <div>
                 <label for="cpf">CPF: </label>
                 <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" id="cpf" name="cpf" required>
-            <p>
+            </div>
+            <div>
                 <label for="idade">Idade: </label>
-                <input type="number" id="idade" name="idade" required>
-            </p>
-        </div>
-        <div>
-            <p>
+                <input type="number" name="idade" id="idade" required>
+            </div>
+            <div>
                 <label for="telefone">Telefone: </label>
                 <input type="tel" id="telefone" name="telefone" required>
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="dataNascimento">Data de Nascimento: </label>
-                <input type="date" id="dataNascimento" name="dataNascimento">
-            </p>
-        </div>
-        <fieldset>
-            <legend>Escolha o sexo</legend>
-            <div>
-                <input type="radio" id="sexoF" name="sexoF" value="Feminino">
-                <label for="sexoF">Feminino</label>
             </div>
             <div>
-                <input type="radio" id="sexoM" name="sexoM" value="Masculino">
-                <label for="sexoM">Masculino</label>
+                <label for="data_nascimento">Data de Nascimento: </label>
+                <input type="date" id="data_nascimento" name="data_nascimento">
             </div>
+            <fieldset>
+                <legend>Sexo:</legend>
+                <div>
+                    <input type="radio" id="masculino" name="sexo" value="masculino">
+                    <label for="masculino">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="feminino" name="sexo" value="feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+                <div>
+                    <input type="radio" id="outro" name="sexo" value="outro">
+                    <label for="outro">Outro</label>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Estado Civil:</legend>
+                <div>
+                    <input type="radio" id="solteiro" name="estadocivil" value="solteiro">
+                    <label for="solteiro">Solteiro</label>
+                </div>
+                <div>
+                    <input type="radio" id="casado" name="estadocivil" value="casado">
+                    <label for="casado">Casado</label>
+                </div>
+                <div>
+                    <input type="radio" id="divorciado" name="estadocivil" value="divorciado">
+                    <label for="divorciado">Divorciado</label>
+                </div>
+            </fieldset>
         </fieldset>
 
         <fieldset>
-            <legend> Escolha o estado civil</legend>
+            <legend>Endereço de Entrega</legend>
             <div>
-                <input type="radio" id="solteiro" name="estadocivil" value="solteiro">
-                <label for="solteiro">Solteiro</label>
-            </div>
-            <div>
-                <input type="radio" id="casado" name="estadocivil" value="casado">
-                <label for="casado">Casado</label>
-            </div>
-            <div>
-                <input type="radio" id="divorciado" name="estadocivil" value="divorciado">
-                <label for="divorciado">Divorciado</label>
-            </div>
-        </fieldset>
-    </fieldset>
-
-    <h2>Endereço de Entrega</h2>
-    <fieldset>
-        <div>
-            <p>
                 <label for="cep">CEP: </label>
                 <input type="text" id="cep" name="cep" required>
-        </div>
-
-        <div>
-            <p><label>Tipo de Logradouro:
-                    <select name="tipologradouro" required>
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="rua">Rua</option>
-                        <option value="avenida">Avenida</option>
-                        <option value="travessa">Travessa</option>
-                        <option value="alameda">Alameda</option>
-                        <option value="praça">Praça</option>
-                    </select>
-                </label></p>
-        </div>
-        <div>
+            </div>
             <p>
+                <label>Tipo de Logradouro:
+                    <select name="tipo_logradouro" required>
+                        <option value="">Selecione</option>
+                        <option value="AV">Avenida</option>
+                        <option value="RU">Rua</option>
+                        <option value="AL">Alameda</option>
+                        <option value="TR">Travessa</option>
+                        <option value="PR">Praça</option>
+                        <option value="OU">Outro</option>
+                    </select>
+                </label>
+            </p>
+            <div>
                 <label for="logradouro">Logradouro: </label>
                 <input type="text" id="logradouro" name="logradouro" required>
-            </p>
-        </div>
-        <div>
-            <p>
+            </div>
+            <div>
                 <label for="bairro">Bairro: </label>
                 <input type="text" id="bairro" name="bairro" required>
-            </p>
-        </div>
-        <div>
-            <p>
+            </div>
+            <div>
                 <label for="cidade">Cidade: </label>
                 <input type="text" id="cidade" name="cidade" required>
-            </p>
-        </div>
-        <div>
-            <p>
+            </div>
+            <div>
                 <label for="estado">Estado: </label>
                 <input type="text" id="estado" name="estado" required>
-            </p>
-        </div>
-    </fieldset>
+            </div>
+        </fieldset>
 
-    <h2>Informações Adicionais</h2>
-    <fieldset>
-        <legend>Pratica algum desses esportes?</legend>
-        <div>
-            <input type="checkbox" id="natação" name="esportes[]" value="natação">
-            <label for="natação">Natação</label>
-        </div>
-        <div>
-            <input type="checkbox" id="ciclismo" name="esportes[]" value="ciclismo">
-            <label for="ciclismo">Ciclismo</label>
-        </div>
-        <div>
-            <input type="checkbox" id="futebol" name="esportes[]" value="futebol">
-            <label for="futebol">Futebol</label>
-        </div>
+        <fieldset>
+            <legend>Informações Adicionais</legend>
 
-        <div>
-            <label for="outros">Outros:</label>
-            <br>
-            <textarea id="outros" name="Dia-a-Dia" rows="10"
-                cols="50">Descreva brevemente seu dia, alimentação, etc.</textarea>
-        </div>
+            <p>Interesses:</p>
+
+            <div>
+                <input type="checkbox" id="filmes" name="interesses[]" value="filmes">
+                <label for="filmes">Filmes</label>
+            </div>
+            <div>
+                <input type="checkbox" id="informatica" name="interesses[]" value="informatica">
+                <label for="informatica">Informática</label>
+            </div>
+            <div>
+                <input type="checkbox" id="games" name="interesses[]" value="games">
+                <label for="games">Games</label>
+            </div>
+            <div>
+                <input type="checkbox" id="livros" name="interesses[]" value="livros">
+                <label for="livros">Livros</label>
+            </div>
+            <div>
+                <input type="checkbox" id="roupas" name="interesses[]" value="roupas">
+                <label for="roupas">Roupas</label>
+            </div>
 
 
-    </fieldset>
+            <div>
+                <p>
+                    <label for="info_complementares">Informações Complementares:</label>
+                    <br>
+                    <textarea id="info_complementares" name="info_complementares" rows="10"
+                        cols="50">Digite aqui informações adicionais que você gostaria de compartilhar.</textarea>
+                </p>
+            </div>
+
+            <div>
+                <p> <label>Anexar Imagem: <input type="file" name="meuArq" accept="image/*"> </label></p>
+            </div>
+        </fieldset>
 
 
-    <button>Enviar</button>
+        <button>Enviar</button>
 
-</form>
+    </form>
+</body>
 
 </html>
