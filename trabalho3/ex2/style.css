@@ -1,0 +1,116 @@
+/* 1 */
+body {
+    background-color: #ddd;
+    font-family: Arial, sans-serif;
+    color: #444;
+    line-height: 1.5;
+    width: 60%;
+    margin: 0 auto;
+    padding: 2% 0;
+
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-style: ridge;
+    border-color: grey;
+}
+
+a:link {
+    color: blue;
+    /* links não visitados aparecem em azil*/
+}
+
+a:visited {
+    color: rgba(100, 95, 95, 0.858);
+    /* links visitados aparecem em cinza */
+}
+
+a:hover,
+a:active {
+    color: white;
+    /* links quando o mouse passa por cima ou são clicados */
+    background-color: darkgrey;
+    /* fundo laranja */
+    text-decoration: none;
+    /* sem sublinhado */
+}
+
+/* 2 */
+input:invalid+span::after {
+    content: '✖';
+    color: red;
+}
+
+input:valid+span::after {
+    content: '✓';
+    color: limegreen;
+}
+
+/* 3 */
+/* muda a cor dos campos de input que são obrigatórios */
+input[required]{
+    background-color: lightblue;
+}
+
+/* 4 */
+/* usado para estilizar o footer da galeria e da home: alinha o texto no centro */
+#par1 {
+    text-align: center;
+}
+
+/* 5 */
+/* usado para estilizar os títulos h1 de todas as páginas: alinha o texto no centro e altera a cor */
+.titulo {
+    text-align: center;
+    color: rgb(4, 4, 82);
+}
+
+/* 6 */
+/* usado para estilizar as tabelas: muda a cor de fundo e arredonda os cantos das células que contêm imagens */
+td:has(img) {
+    background-color: lightsteelblue;
+    border-radius: 5px;
+}
+
+/* 7 */
+/* usado para estilizar o primeiro h2 de cada página: muda a fonte, cor de fundo e estilo da fonte */
+h2:first-child {
+    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+    background-color: lightgray;
+    font-style: italic;
+}
+
+/* 8 */
+/* usado para estilizar o primeiro parágrafo de cada página: muda a cor do texto e alinha o texto */
+p:first-of-type {
+    color: rgb(48, 48, 113);
+    text-align: justify;
+}
+
+/* 9 */
+/* muda a cor de fundo quando o campo é inválido */
+input:user-invalid{ 
+    background-color: lightpink;
+}
+
+/* 10 */
+/* muda a cor de fundo quando o campo é válido */
+input:valid {
+    background-color: lightgreen;
+}
+
+/* 11 */
+:is(fieldset) {
+    background-color: aliceblue;
+    border: 2px solid darkblue; 
+    padding: 10px;
+}
+
+/* 12 */
+input::placeholder {
+color: navy;
+font-style: italic;
+font-weight: bold; /* negrito */
+ }
