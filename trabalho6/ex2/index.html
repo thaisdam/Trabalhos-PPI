@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Trabalho 6</title>
+</head>
+
+<body>
+    <input type="text" name = "nome">
+    <button type="button">Digite seu nome e clique aqui</button>
+    <p></p>
+    <script>
+        const botao = document.querySelector("button");
+        botao.onclick = function () {
+            const campoNome = document.querySelector("input");
+            const parSaida = document.querySelector("p");
+            parSaida.textContent = 'Obrigado, ' + campoNome.value;
+                };
+        </script>
+<img src="imagens/img.JPG" alt="Captura 1" width="1000"> 
+</body>
+</html>

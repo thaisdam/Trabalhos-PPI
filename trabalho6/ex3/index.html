@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Trabalho 6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercício 3 - Calcular Peso Ideal</h1>
+    <p>Calcule seu peso ideal com base na sua altura e sexo.</p>
+    <label for="altura">Altura (em cm):
+        <input type="text" id="altura">
+    </label>
+
+    <p>
+        <label>Sexo:</label>
+        <input type="radio" name="sexo" value="Masculino" checked> Masculino
+        <input type="radio" name="sexo" value="Feminino"> Feminino
+    </p>
+
+    <button id="button" type="button">Calcular</button>
+    <p id="resultado"></p>
+
+    <img src="imagens/img-ex3.png" alt="print exercício 3" width="1000">
+
+    <script>
+
+        const botao = document.getElementById('button');
+        const campoAltura = document.getElementById('altura');
+        const resultado = document.getElementById('resultado');
+
+        botao.addEventListener('click', function () {
+
+            const nodeRadio = document.querySelector('input[name="sexo"]:checked');
+            let altura = parseInt(campoAltura.value);
+            let PesoIdeal;
+
+            if (nodeRadio.value === "Masculino") {
+                PesoIdeal = 52 + (0.75 * (altura - 152.4));
+            } else {
+                PesoIdeal = 52 + (0.67 * (altura - 152.4));
+            }
+            resultado.textContent = `Seu Peso ideal é: ${PesoIdeal.toFixed(2)} kg`;
+        });
+
+    </script>
+
+</body>
+
+</html>
