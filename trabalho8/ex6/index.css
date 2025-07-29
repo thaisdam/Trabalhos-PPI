@@ -1,0 +1,139 @@
+/* Home */
+
+body {
+    background-color: #ddd;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 2rem;
+    border: gray solid 1px;
+}
+
+main h2 {
+    font-size: 1.8rem;
+}
+
+main p {
+    color: black;
+}
+
+footer {
+    padding: 1rem;
+    color: grey;
+}
+
+nav {
+    width: 100%;
+    background-color: #666;
+    padding: 5px 0;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+}
+
+nav a:link,
+nav a:visited {
+    color: #ddd;
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+header {
+    padding: 1rem;
+}
+
+/*galeria*/
+main table {
+    margin: 0 auto;
+}
+
+main img {
+    border-radius: 5px;
+    align-items: center;
+    box-shadow: 5px 5px 5px gray;
+    margin: 20px;
+}
+
+/*login*/
+
+form {
+    background-color: white;
+    max-width: 300px;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 5px gray;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: gray;
+    box-shadow: 0 0 10px gray;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+/*tabs*/
+nav button {
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    background-color: inherit;
+    height: 30px;
+    margin: 0;
+}
+
+nav button:hover {
+    color: lightblue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+button.buttonActive {
+    font-weight: bold;
+    color: lightblue;
+}
+
+
+.tabs section {
+    display: none;
+}
+
+section.tabActive {
+    display: block;
+}
