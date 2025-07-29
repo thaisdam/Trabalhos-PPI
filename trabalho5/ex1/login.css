@@ -1,3 +1,5 @@
+/* Login */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: gray;
 }
 
 main {
@@ -14,30 +17,29 @@ main {
     max-width: 300px;
     padding: 1.5rem;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-
-input, button {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    border-radius: 4px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px gray;
     box-sizing: border-box;
 }
 
 input:focus {
-    border-color: lightgrey; /* Borda cinza no foco */
-    box-shadow: 0 0 5px lightgray; /* Sombramento cinza no foco */
-    outline: none; /* Remove o contorno padrão de foco */
+    border-color: gray;
+    box-shadow: 0 0 10px gray;
+    outline: none;
 }
 
 button {
-    background-color: lightgrey;
-    cursor: pointer;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+input,
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
