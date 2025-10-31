@@ -23,12 +23,12 @@ Até agora, os seguintes trabalhos foram realizados:
 13. [Trabalho 13](trabalho13/index.html)
 
 ## 📎 Como acessar
-Os trabalhos podem ser acessados através do GitHub Pages:  
-🔗 **[Clique aqui para visualizar](https://thaisdam.github.io/Trabalhos-PPI/)**
-
-Ou através do infinityfree:
-
+Os trabalhos podem ser acessados através do infinityfree:  
 🔗 **[Clique aqui para visualizar](http://trabalhosppi97.infinityfreeapp.com/)**
+
+Ou através do GitHub Pages:
+
+🔗 **[Clique aqui para visualizar](https://thaisdam.github.io/Trabalhos-PPI/)**
 
 
 ## 📌 Tecnologias Utilizadas
